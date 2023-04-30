@@ -14,9 +14,17 @@
 .jsm-image-tiles .jsm-image-tiles-inner {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-content: flex-start;
   flex-direction: row;
+}
+.jsm-image-tiles .jsm-image-tiles-inner.top {
+  align-items: flex-start;
+}
+.jsm-image-tiles .jsm-image-tiles-inner.center {
+  align-items: center;
+}
+.jsm-image-tiles .jsm-image-tiles-inner.bottom {
+  align-items: flex-end;
 }
 .jsm-image-tiles .jsm-image-tiles-inner .tile {
   width: 50%;

@@ -4,7 +4,7 @@
 		{{ section.settings.title }}
 	</div>
 	
-	<div class="jsm-image-tiles-inner" style="padding-top: {{ section.settings.padding_top }}px;padding-bottom: {{ section.settings.padding_bottom }}px;">
+	<div class="jsm-image-tiles-inner {{ section.settings.image_alignment }}" style="padding-top: {{ section.settings.padding_top }}px;padding-bottom: {{ section.settings.padding_bottom }}px;">
 		{% for block in section.blocks %}
 			<div class="tile">
 				{% if block.settings.image_link %}
@@ -61,6 +61,26 @@
       ],
       "default": "center",
       "label": "t:sections.jsm.section_align_label"
+    },
+    {
+      "type": "select",
+      "id": "image_alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "t:sections.jsm.image_align_left"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.jsm.image_align_center"
+        },
+        {
+          "value": "bottom",
+          "label": "t:sections.jsm.image_align_right"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.jsm.image_align_label"
     },
     {
       "type": "range",
