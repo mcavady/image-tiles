@@ -24,7 +24,8 @@
         "image_quality_original": "original 1024 × 1024",
         "image_quality_master": "No resize full size",
         "image_quality_label": "Image Quality settings",
-        "link_label": "Link"
+        "link_label": "Link",
+        "link_color": "Link Color"
       }
     },
     "all": {

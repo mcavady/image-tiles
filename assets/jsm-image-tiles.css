@@ -36,6 +36,9 @@
   align-items: center;
   position: relative;
 }
+.jsm-image-tiles .jsm-image-tiles-inner .tile .img-wrapper:hover img {
+  opacity: 0.5;
+}
 .jsm-image-tiles .jsm-image-tiles-inner .tile .img-wrapper a {
   display: block;
   width: 100%;

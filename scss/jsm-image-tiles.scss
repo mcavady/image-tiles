@@ -40,6 +40,12 @@
         align-items: center;
         position: relative;
 
+        &:hover {
+          img {
+            opacity: 0.5;
+          }
+        }
+
         a {
           display: block;
           width: 100%;
