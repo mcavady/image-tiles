@@ -34,6 +34,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .jsm-image-tiles .jsm-image-tiles-inner .tile .img-wrapper a {
   display: block;
@@ -42,6 +43,16 @@
 .jsm-image-tiles .jsm-image-tiles-inner .tile .img-wrapper img {
   width: 100%;
   height: auto;
+}
+.jsm-image-tiles .jsm-image-tiles-inner .tile .img-wrapper .read-more {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  text-align: center;
+}
+.jsm-image-tiles .jsm-image-tiles-inner .tile .img-wrapper .read-more svg {
+  height: 50px;
 }
 
 @media screen and (max-width: 767px) {

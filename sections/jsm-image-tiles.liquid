@@ -1,36 +1,41 @@
 {{ 'jsm-image-tiles.css' | asset_url | stylesheet_tag }}
 <div class="jsm-image-tiles">
-	<div class="title {{ section.settings.text_alignment }}" >
-		{{ section.settings.title }}
-	</div>
-	
-	<div class="jsm-image-tiles-inner {{ section.settings.image_alignment }}" style="padding-top: {{ section.settings.padding_top }}px;padding-bottom: {{ section.settings.padding_bottom }}px;">
-		{% for block in section.blocks %}
-			<div class="tile">
-				{% if block.settings.image_link %}
-					<div class="img-wrapper">
-						<a href="{{ block.settings.image_link }}" title="{{ block.settings.image_link.title }}">
-							<img srcset="{{ block.settings.tile_image | img_url: 'master' }}"
-								 src="{{ block.settings.tile_image | img_url: 'master' }}"
-								 alt="{{ block.settings.tile_image.alt | escape }}"
-								 title="{{ block.settings.tile_image.alt | escape }}"
-								 class="lazyload Image--lazyLoad"
-							>
-						</a>
-					</div>
-				{% else %}
-					<div class="img-wrapper">
-						<img srcset="{{ block.settings.tile_image | img_url: 'master' }}"
-							 src="{{ block.settings.tile_image | img_url: 'master' }}"
-							 alt="{{ block.settings.tile_image.alt | escape }}"
-							 title="{{ block.settings.tile_image.alt | escape }}"
-							 class="lazyload Image--lazyLoad"
-						>
-					</div>
-				{% endif %}
-			</div>
-		{% endfor %}
-	</div>
+  <div class="title {{ section.settings.text_alignment }}" >
+    {{ section.settings.title }}
+  </div>
+  
+  <div class="jsm-image-tiles-inner {{ section.settings.image_alignment }}" style="padding-top: {{ section.settings.padding_top }}px;padding-bottom: {{ section.settings.padding_bottom }}px;">
+    {% for block in section.blocks %}
+      {% assign imageQuality = block.settings.image_quality %}
+  
+      <div class="tile">
+        {% if block.settings.image_link %}
+          <div class="img-wrapper">
+            <a href="{{ block.settings.image_link }}" title="{{ block.settings.image_link.title }}">
+              <img srcset="{{ block.settings.tile_image | img_url: imageQuality }}"
+                   src="{{ block.settings.tile_image | img_url: imageQuality }}"
+                   alt="{{ block.settings.tile_image.alt | escape }}"
+                   title="{{ block.settings.tile_image.alt | escape }}"
+                   class="lazyload Image--lazyLoad"
+              >
+              <div class="read-more">
+                {% render "icon-read-more" %}
+              </div>
+            </a>
+          </div>
+        {% else %}
+          <div class="img-wrapper">
+            <img srcset="{{ block.settings.tile_image | img_url: imageQuality }}"
+                 src="{{ block.settings.tile_image | img_url: imageQuality }}"
+                 alt="{{ block.settings.tile_image.alt | escape }}"
+                 title="{{ block.settings.tile_image.alt | escape }}"
+                 class="lazyload Image--lazyLoad"
+            >
+          </div>
+        {% endif %}
+      </div>
+    {% endfor %}
+  </div>
 </div>
 
 {% schema %}
@@ -117,6 +122,46 @@
           "type": "url",
           "id": "image_link",
           "label": "t:sections.jsm.blocks.link_label"
+        },
+        {
+          "type": "select",
+          "id": "image_quality",
+          "options": [
+            {
+              "value": "thumb",
+              "label": "t:sections.jsm.blocks.image_quality_thumb"
+            },
+            {
+              "value": "small",
+              "label": "t:sections.jsm.blocks.image_quality_small"
+            },
+            {
+              "value": "compact",
+              "label": "t:sections.jsm.blocks.image_quality_compact"
+            },
+            {
+              "value": "medium",
+              "label": "t:sections.jsm.blocks.image_quality_medium"
+            },
+            {
+              "value": "large",
+              "label": "t:sections.jsm.blocks.image_quality_large"
+            },
+            {
+              "value": "grande",
+              "label": "t:sections.jsm.blocks.image_quality_grande"
+            },
+            {
+              "value": "original",
+              "label": "t:sections.jsm.blocks.image_quality_original"
+            },
+            {
+              "value": "master",
+              "label": "t:sections.jsm.blocks.image_quality_master"
+            }
+          ],
+          "default": "large",
+          "label": "t:sections.jsm.blocks.image_quality_label"
         }
       ]
     }

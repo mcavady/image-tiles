@@ -15,6 +15,15 @@
       "blocks": {
         "block_name": "Tile settings",
         "image_label": "Image settings",
+        "image_quality_thumb": "thumb - 50 × 50",
+        "image_quality_small": "small - 100 × 100",
+        "image_quality_compact": "compact - 160 × 160",
+        "image_quality_medium": "medium - 240 × 240",
+        "image_quality_large": "large - 480 × 480",
+        "image_quality_grande": "grande - 600 × 600",
+        "image_quality_original": "original 1024 × 1024",
+        "image_quality_master": "No resize full size",
+        "image_quality_label": "Image Quality settings",
         "link_label": "Link"
       }
     },
