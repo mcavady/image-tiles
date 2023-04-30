@@ -1,10 +1,7 @@
 {
   "name": "jsm-defaults",
-  "version": "1.0.0",
-  "description": "Shopify version - Shopify CLI for themes",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "version": "1.0.2",
+  "description": "Shopify 2.0 - jsm image tiles - section and blocks with translation",
   "author": "James Mcavady",
   "dependencies": {
     "@shopify/cli": "^3.23.0"
