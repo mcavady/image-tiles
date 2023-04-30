@@ -1,2 +1,18 @@
-# shopify-base
-Base setup for modular sections and blocks with gulp sass compiler
+# BASE CODE from github template - shopify-base
+Base setup for modular sections and blocks with gulp sass compiler - https://github.com/mcavady/shopify-base
+
+# jsm-image-tiles - Dawn v6.*
+
+Image tiles that have a number of options to them - fullwidth
+
+# Usage
+
+Copy following files of the root dir for your shopify project;
+
+/assets/jsm-image-tiles.css
+<br/>
+/sections/jsm-image-tiles.liquid
+<br/>
+
+
+<p>This code was tested in the Default Dawn theme. - at the time of writing</p>

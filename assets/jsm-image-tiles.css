@@ -1,0 +1,50 @@
+/* Run gulpfile.js to output this to assets folder */
+.jsm-image-tiles {
+  width: 100%;
+}
+.jsm-image-tiles .jsm-image-tiles-inner {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.jsm-image-tiles .jsm-image-tiles-inner .tile {
+  width: 50%;
+}
+.jsm-image-tiles .jsm-image-tiles-inner .tile:nth-of-type(odd) a {
+  padding-right: 5px;
+}
+.jsm-image-tiles .jsm-image-tiles-inner .tile:nth-of-type(even) a {
+  padding-left: 5px;
+}
+.jsm-image-tiles .jsm-image-tiles-inner .tile a {
+  display: block;
+}
+.jsm-image-tiles .jsm-image-tiles-inner .tile a img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .jsm-image-tiles {
+    width: 100%;
+  }
+  .jsm-image-tiles .jsm-image-tiles-inner {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+  .jsm-image-tiles .jsm-image-tiles-inner .tile {
+    width: 100%;
+  }
+  .jsm-image-tiles .jsm-image-tiles-inner .tile:nth-of-type(odd) a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .jsm-image-tiles .jsm-image-tiles-inner .tile:nth-of-type(even) a {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
