@@ -22,12 +22,12 @@
 
 {% schema %}
 {
-  "name": "JSM Image Tiles",
+  "name": "t:sections.jsm.section_name",
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "label": "Title"
+      "label": "t:sections.jsm.section_title"
     },
     {
       "type": "range",
@@ -56,31 +56,31 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Center white Space",
+      "label": "t:sections.jsm.padding_middle",
       "default": 0
     }
   ],
   "blocks": [
     {
       "type": "tile",
-      "name": "Tile Image",
+      "name": "t:sections.jsm.blocks.block_name",
       "settings": [
         {
           "type": "image_picker",
           "id": "tile_image",
-          "label": "Image"
+          "label": "t:sections.jsm.blocks.image_label"
         },
         {
           "type": "url",
           "id": "image_link",
-          "label": "Link"
+          "label": "t:sections.jsm.blocks.link_label"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "JSM Image Tiles",
+      "name": "t:sections.jsm.section_name",
       "category": "Image",
       "blocks": [
         {

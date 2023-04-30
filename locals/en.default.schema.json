@@ -1,0 +1,22 @@
+{
+  "sections": {
+    "jsm": {
+      "title": "Title",
+      "section_name": "JSM Image Tiles",
+      "section_title": "Section title",
+      "padding_middle": "Center white Space",
+      "blocks": {
+        "block_name": "Tile settings",
+        "image_label": "Image settings",
+        "link_label": "Link"
+      }
+    },
+    "all": {
+      "padding": {
+        "section_padding_heading": "Section padding",
+        "padding_top": "Top padding",
+        "padding_bottom": "Bottom padding"
+      }
+    }
+  }
+}
