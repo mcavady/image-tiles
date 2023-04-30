@@ -14,7 +14,7 @@ Copy following files of the root dir for your shopify project;
 /sections/jsm-image-tiles.liquid
 <br/>
 
-# Add these lines to you en.default.schema.json
+# Add these lines to your en.default.schema.json
 /locals/en.default.schema.json - you will need to add the lines from this to your current translation file, other languages will have to be completed as and when you need ;)
 
 

@@ -2,6 +2,18 @@
 .jsm-image-tiles {
   width: 100%;
 
+  .title {
+    &.left {
+      text-align: left;
+    }
+    &.center {
+      text-align: center;
+    }
+    &.right {
+      text-align: right;
+    }
+  }
+
   .jsm-image-tiles-inner {
     width: 100%;
     display: flex;
@@ -11,21 +23,17 @@
 
     .tile {
       width: 50%;
-      &:nth-of-type(odd) {
+
+      .img-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         a {
-          padding-right: 5px;
+          display: block;
+          width: 100%;
         }
-      }
-
-      &:nth-of-type(even) {
-        a {
-          padding-left: 5px;
-        }
-      }
-
-      a {
-        display: block;
 
         img {
           width: 100%;
@@ -48,27 +56,6 @@
 
       .tile {
         width: 100%;
-
-        &:nth-of-type(odd) {
-
-          a {
-            padding-left: 5px;
-            padding-right: 5px;
-            img {
-            }
-          }
-        }
-
-        &:nth-of-type(even) {
-          a {
-            padding-left: 5px;
-            padding-right: 5px;
-            img {
-            }
-          }
-        }
-
-
       }
     }
   }

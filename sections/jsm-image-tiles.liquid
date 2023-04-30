@@ -1,20 +1,33 @@
 {{ 'jsm-image-tiles.css' | asset_url | stylesheet_tag }}
 <div class="jsm-image-tiles">
-	<div class="title">
-		{{ section.setting.title }}
+	<div class="title {{ section.settings.text_alignment }}" >
+		{{ section.settings.title }}
 	</div>
 	
 	<div class="jsm-image-tiles-inner" style="padding-top: {{ section.settings.padding_top }}px;padding-bottom: {{ section.settings.padding_bottom }}px;">
 		{% for block in section.blocks %}
 			<div class="tile">
-				<a href="{{ block.settings.image_link }}" title="{{ block.settings.image_link.title }}">
-					<img srcset="{{ block.settings.tile_image | img_url: 'master' }}"
-						 src="{{ block.settings.tile_image | img_url: 'master' }}"
-						 alt="{{ block.settings.tile_image.alt | escape }}"
-						 title="{{ block.settings.tile_image.alt | escape }}"
-						 class="lazyload Image--lazyLoad"
-					>
-				</a>
+				{% if block.settings.image_link %}
+					<div class="img-wrapper">
+						<a href="{{ block.settings.image_link }}" title="{{ block.settings.image_link.title }}">
+							<img srcset="{{ block.settings.tile_image | img_url: 'master' }}"
+								 src="{{ block.settings.tile_image | img_url: 'master' }}"
+								 alt="{{ block.settings.tile_image.alt | escape }}"
+								 title="{{ block.settings.tile_image.alt | escape }}"
+								 class="lazyload Image--lazyLoad"
+							>
+						</a>
+					</div>
+				{% else %}
+					<div class="img-wrapper">
+						<img srcset="{{ block.settings.tile_image | img_url: 'master' }}"
+							 src="{{ block.settings.tile_image | img_url: 'master' }}"
+							 alt="{{ block.settings.tile_image.alt | escape }}"
+							 title="{{ block.settings.tile_image.alt | escape }}"
+							 class="lazyload Image--lazyLoad"
+						>
+					</div>
+				{% endif %}
 			</div>
 		{% endfor %}
 	</div>
@@ -28,6 +41,26 @@
       "type": "text",
       "id": "title",
       "label": "t:sections.jsm.section_title"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.jsm.section_align_left"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.jsm.section_align_center"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.jsm.section_align_right"
+        }
+      ],
+      "default": "center",
+      "label": "t:sections.jsm.section_align_label"
     },
     {
       "type": "range",
@@ -48,16 +81,6 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    },
-    {
-      "type": "range",
-      "id": "padding_middle",
-      "min": 0,
-      "max": 100,
-      "step": 4,
-      "unit": "px",
-      "label": "t:sections.jsm.padding_middle",
-      "default": 0
     }
   ],
   "blocks": [

@@ -4,7 +4,10 @@
       "title": "Title",
       "section_name": "JSM Image Tiles",
       "section_title": "Section title",
-      "padding_middle": "Center white Space",
+      "section_align_left": "Align title Left",
+      "section_align_center": "Align title Center",
+      "section_align_right": "Align title Right",
+      "section_align_label": "Title Alignment",
       "blocks": {
         "block_name": "Tile settings",
         "image_label": "Image settings",
